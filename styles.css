@@ -74,13 +74,28 @@ body#page-question-type-coderunner .ace_editor {
     color: black;
 }
 
+.que.coderunner div.precheck h3 {
+    margin: 3px 0;
+    font-size: 24px;
+    color: #333;
+}
+
 .que.coderunner div.coderunner-test-results.good {
     background-color: #AAFFAA;
+}
+
+.que.coderunner div.coderunner-test-results.good.precheck {
+    background: repeating-linear-gradient(0deg, #AAFFAA, #AAFFAA 10px, #CCFFCC 2px, #CCFFCC 12px);
 }
 
 .que.coderunner div.coderunner-test-results.bad,
 .que.coderunner pre.pre_syntax_error {
     background-color: #FFAAAA;
+}
+
+.que.coderunner div.coderunner-test-results.bad.precheck,
+.que.coderunner pre.pre_syntax_error .precheck {
+    background: repeating-linear-gradient(0deg, #FFAAAA, #FFAAAA 10px, #FFCCCC 2px, #FFCCCC 12px);
 }
 
 .que.coderunner pre.pre_syntax_error {

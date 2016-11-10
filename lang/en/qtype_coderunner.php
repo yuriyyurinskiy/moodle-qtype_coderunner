@@ -256,7 +256,7 @@ tests for which 'use_as_example' has been checked. If 'Selected' is selected,
 extra UI elements will be added to each test case to allow the author to select
 a specific subset of the tests.
 EOPRECHECK;
-$string['precheck_only'] = "PRE-CHECK ONLY";
+$string['precheck_only'] = "Pre-check only";
 $string['proceed_at_own_risk'] = 'Editing a built-in question prototype?! Proceed at your own risk!';
 $string['prototypecontrols'] = 'Prototyping';
 $string['prototypecontrols_help'] = <<<EOPCHELP
