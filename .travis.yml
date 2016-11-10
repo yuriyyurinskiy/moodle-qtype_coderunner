@@ -43,6 +43,7 @@ before_install:
   # Install packages
   - sudo apt-get update
   - sudo apt-get install build-essential apache2 libapache2-mod-fastcgi python3-pip octave nodejs fp-compiler pylint
+  - printenv
   - pylint --reports=no --generate-rcfile > pylintrcs
   - sudo mv pylintrcs /etc/pylintrcs
   - phpenv config-rm xdebug.ini
