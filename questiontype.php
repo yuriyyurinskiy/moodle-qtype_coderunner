@@ -87,7 +87,7 @@ class qtype_coderunner extends question_type {
             'prototypetype',
             'allornothing',
             'penaltyregime',
-            'pretest',
+            'precheck',
             'showsource',
             'answerboxlines',
             'answerboxcolumns',
@@ -120,7 +120,7 @@ class qtype_coderunner extends question_type {
             'prototypetype',
             'allornothing',
             'penaltyregime',
-            'pretest',
+            'precheck',
             'showsource',
             'answerboxlines',
             'answerboxcolumns',
@@ -585,7 +585,7 @@ class qtype_coderunner extends question_type {
 
         $newdefaults = array(
             'allornothing' => 1,
-            'pretest' => 'disable',
+            'precheck' => 'disable',
             'answerboxlines' => 15,
             'answerboxcolumns' => 90,
             'useace' => 1

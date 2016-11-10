@@ -245,6 +245,17 @@ $string['pluginname_help'] = 'Use the "Question type" combo box to select the ' 
         'Specify the problem that the student must write code for, then define '.
         'a set of tests to be run on the student\'s submission';
 $string['pluginname_link'] = 'question/type/coderunner';
+$string['precheck'] = 'Precheck';
+$string['precheck_help'] = <<<EOPRECHECK
+If Precheck is enabled, students will have an extra button to the left of the
+usual check button to give them a penalty-free run to check their code against
+a subset of the question test cases. If 'Empty' is selected, none of the tests
+will be run but the code will be compiled and subjected to any validity checks within the
+template. If 'Examples' is selected, the code will be tested against all the
+tests for which 'use_as_example' has been checked. If 'Selected' is selected,
+extra UI elements will be added to each test case to allow the author to select
+a specific subset of the tests.
+EOPRECHECK;
 $string['precheck_only'] = "PRE-CHECK ONLY";
 $string['proceed_at_own_risk'] = 'Editing a built-in question prototype?! Proceed at your own risk!';
 $string['prototypecontrols'] = 'Prototyping';
@@ -412,7 +423,7 @@ the value 23 would be substituted into the template in place of the
 template variable {{ QUESTION.parameters.age }}.
 EO_TEMPLATE_PARAMS_HELP;
 $string['testcase'] = 'Test case {$a}';
-$string['testcasecontrols'] = 'Row properties:';
+$string['testcasecontrols'] = 'Test properties:';
 $string['testcasecontrols_help'] = <<<EO_TESTCASECTRLS_HELP
 If "Use as example" is checked, this test will be automatically included in the
 question's "For example:" results table.<br>

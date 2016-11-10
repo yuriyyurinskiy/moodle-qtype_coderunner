@@ -16,20 +16,23 @@
 /*
  * @package    qtype
  * @subpackage coderunner
- * @copyright  2012, 2015 Richard Lobb, University of Canterbury
+ * @copyright  2016 Richard Lobb, University of Canterbury
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+require_once($CFG->dirroot . '/question/type/coderunner/Twig/Autoloader.php');
+require_once($CFG->dirroot . '/question/type/coderunner/locallib.php');
+require_once($CFG->dirroot . '/question/type/coderunner/constants.php');
+require_once($CFG->dirroot . '/question/type/coderunner/grader/graderbase.php');
+require_once($CFG->dirroot . '/question/type/coderunner/sandbox/sandboxbase.php');
+require_once($CFG->dirroot . '/question/type/coderunner/escapers.php');
+require_once($CFG->dirroot . '/question/type/coderunner/testingoutcome.php');
+require_once($CFG->dirroot . '/question/type/coderunner/questiontype.php');
+
 namespace qtype_coderunner;
 
-class constants {
-    const TEMPLATE_LANGUAGE = 0;
-    const USER_LANGUAGE = 1;
-    const DEFAULT_GRADER = 'EqualityGrader';  // External name of default grader
-    const FUNC_MIN_LENGTH = 1;  /* Minimum no. of bytes for a valid bit of code */
+// The jobrunner class contains all code concerned with running a question
+// in the sandbox.
+class jobrunner {
 
-    const PRECHECK_DISABLED = 0;
-    const PRECHECK_EMPTY = 1;
-    const PRECHECK_EXAMPLES = 2;
-    const PRECHECK_SELECTED = 3;
 }

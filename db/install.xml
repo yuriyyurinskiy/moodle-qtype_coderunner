@@ -13,7 +13,7 @@
         <FIELD NAME="allornothing" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="1" SEQUENCE="false" COMMENT="True if answer must pass all test cases to earn any marks"/>
         <FIELD NAME="showsource" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="True to display full source code after template expansion, for debugging template."/>
         <FIELD NAME="answerboxlines" TYPE="int" LENGTH="5" NOTNULL="true" DEFAULT="18" SEQUENCE="false" COMMENT="The number of lines for the answer box"/>
-        <FIELD NAME="precheck" TYPE="char" LENGTH="64" NOTNULL="false" DEFAULT="disable" SEQUENCE="false" COMMENT="Sets what test-set is used if pre-checking is available. 'disable': no pretest button available; 'empty' for no actual tests; 'examples' for all use-as-example tests; 'selected' for specific selected tests; 'all' for all tests."/>
+        <FIELD NAME="precheck" TYPE="int" LENGTH="8" NOTNULL="false" DEFAULT="0" SEQUENCE="false" COMMENT="Sets what test-set is used if pre-checking is available. 0 = 'disable': no pretest button available; 1 = 'empty' for no actual tests; 2 = 'examples' for all use-as-example tests; 3 = 'selected' for specific selected tests."/>
         <FIELD NAME="answerboxcolumns" TYPE="int" LENGTH="5" NOTNULL="true" DEFAULT="100" SEQUENCE="false" COMMENT="Number of columns of answerbox."/>
         <FIELD NAME="useace" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="1" SEQUENCE="false" COMMENT="True to use the Ace code editor to control the student answer"/>
         <FIELD NAME="penaltyregime" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" COMMENT="A comma-separated list of percentage penalties to apply to each submission. If empty use default question penalty"/>

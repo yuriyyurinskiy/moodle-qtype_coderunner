@@ -38,8 +38,10 @@ require_once($CFG->dirroot . '/question/type/coderunner/sandbox/sandboxbase.php'
 require_once($CFG->dirroot . '/question/type/coderunner/escapers.php');
 require_once($CFG->dirroot . '/question/type/coderunner/testingoutcome.php');
 require_once($CFG->dirroot . '/question/type/coderunner/questiontype.php');
+require_once($CFG->dirroot . '/question/type/coderunner/jobrunner.php');
 
 use qtype_coderunner\constants;
+use qtype_coderunner\jobrunner;
 
 /**
  * Represents a 'CodeRunner' question.
@@ -133,8 +135,10 @@ class qtype_coderunner_question extends question_graded_automatically {
     // This implementation assumes a modified behaviour that will accept a
     // third array element in its response, containing data to be cached and
     // served up again in the response on subsequent calls.
-
     public function grade_response(array $response, $isprecheck=false) {
+        if ($isprecheck && empty($this->precheck)) {
+            throw new coding_exception("Unexpected precheck");
+        }
         if (empty($response['_testoutcome'])) {
             $code = $response['answer'];
             if ($isprecheck) {
@@ -164,9 +168,10 @@ class qtype_coderunner_question extends question_graded_automatically {
     // Extract from the set of testcases those that match the criteria
     // selected by the precheck setting for this question.
     protected function filter_testcases($precheck) {
-        if ($precheck === 'empty') {
+        if ($precheck == constants::PRECHECK_EMPTY) {
             return array();
-        } else if ($precheck === 'examples') {
+        }
+        else if ($precheck == constants::PRECHECK_EXAMPLES) {
             $examples = array();
             foreach ($this->testcases as $testcase) {
                 if ($testcase->useasexample) {
@@ -174,8 +179,10 @@ class qtype_coderunner_question extends question_graded_automatically {
                 }
             }
             return $examples;
-        } else if ($precheck === 'selected') {
-            return array(); // Unimplemented at present
+        } else if ($precheck == constants::PRECHECK_SELECTED) {
+            return array(); // Unimplemented at present.
+        } else {
+            throw new coding_exception('Illegal value for $precheck');
         }
     }
 

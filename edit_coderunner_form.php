@@ -29,6 +29,9 @@ defined('MOODLE_INTERNAL') || die();
 require_once($CFG->dirroot . '/question/type/coderunner/sandbox/sandboxbase.php');
 require_once($CFG->dirroot . '/question/type/coderunner/questiontype.php');
 require_once($CFG->dirroot . '/question/type/coderunner/locallib.php');
+require_once($CFG->dirroot . '/question/type/coderunner/constants.php');
+
+use qtype_coderunner\constants;
 
 /*
  * coderunner editing form definition.
@@ -435,6 +438,20 @@ class qtype_coderunner_edit_form extends question_edit_form {
         $mform->addElement('group', 'answerbox_group', get_string('answerbox_group', 'qtype_coderunner'),
                 $answerboxelements, null, false);
         $mform->addHelpButton('answerbox_group', 'answerbox_group', 'qtype_coderunner');
+
+        // Precheck control (a group with only one element)
+
+        $precheckelements = array();
+        $precheckvalues = array(
+            constants::PRECHECK_DISABLED => 'Disabled',
+            constants::PRECHECK_EMPTY    => 'Empty',
+            constants::PRECHECK_EXAMPLES => 'Examples',
+            constants::PRECHECK_SELECTED => 'Selected'
+        );
+        $precheckelements[] = $mform->createElement('select', 'precheck', null, $precheckvalues);
+        $mform->addElement('group', 'coderunner_precheck_group',
+                get_string('precheck', 'qtype_coderunner'), $precheckelements, null, false);
+        $mform->addHelpButton('coderunner_precheck_group', 'precheck', 'qtype_coderunner');
 
         // Marking controls.
         $markingelements = array();
