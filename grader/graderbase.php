@@ -46,6 +46,9 @@ abstract class qtype_coderunner_grader {
 
     const MAX_STRING_LENGTH = 8000;
 
+    // Return the name of this grader - one of available_graders() below.
+    abstract public function name();
+
     /**
      * A list of available graders. Keys are the externally known grader names
      * as they appear in the exported questions, values are the associated

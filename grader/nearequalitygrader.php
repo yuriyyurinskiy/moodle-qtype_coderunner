@@ -43,6 +43,12 @@ class qtype_coderunner_near_equality_grader extends qtype_coderunner_grader {
      *
      *  As requested by Ulrich Dangel.
      */
+
+    public function name() {
+        return 'near_equality_grader';
+    }
+
+
     protected function grade_known_good(&$output, &$testcase) {
         $cleanedoutput = self::clean($output);
         $cleanedexpected = self::clean($testcase->expected);
